@@ -1,0 +1,19 @@
+$fontsize:20px;
+$buttonColor:white;
+$buttonPadding:10px 16px;
+$bgColor:#00443c;
+$borderRadius:6px;
+.hello-world-button{
+    font-size: $fontsize;
+    padding: $buttonPadding;
+    background: $bgColor;
+    color: $buttonColor;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: $borderRadius;
+
+}
+.hello-world-text{
+    color: $bgColor;
+}

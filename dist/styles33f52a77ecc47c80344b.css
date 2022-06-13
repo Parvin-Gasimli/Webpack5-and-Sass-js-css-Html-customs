@@ -1,0 +1,18 @@
+h1 {
+  color: gray;
+  font-size: 2rem;
+}
+.hello-world-button {
+  font-size: 20px;
+  padding: 10px 16px;
+  background: #00443c;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+
+.hello-world-text {
+  color: #00443c;
+}
