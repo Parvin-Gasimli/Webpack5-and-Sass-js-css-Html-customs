@@ -2,7 +2,7 @@ const path = require("path");
 const TeserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const HtmlWebpackPlugin=require('html-webpack-plugin')
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -10,7 +10,17 @@ module.exports = {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "",
   },
-  mode: "none",
+  mode: "development",
+  devServer: {
+    port: 3000,
+    static: {
+      directory: path.resolve(__dirname, "./dist"),
+    },
+    devMiddleware:{
+      index:'index.html',
+      writeToDisk:true
+    }
+  },
   module: {
     rules: [
       //   { test: /\.(ttf)$/, type: "asset/resource" },
@@ -47,9 +57,9 @@ module.exports = {
         },
       },
       {
-        test:/\.hbs/,
-        use:['handlebars-loader']
-      }
+        test: /\.hbs/,
+        use: ["handlebars-loader"],
+      },
     ],
   },
   plugins: [
@@ -64,12 +74,12 @@ module.exports = {
       ],
     }),
     new HtmlWebpackPlugin({
-      title:"new Custom Webpack",
-      filename:"asset/index.html",
-      template:"src/index.hbs",
-      meta:{
-        description:'Some Descriptions'
-      }
-    })
+      title: "new Custom Webpack",
+      filename: "index.html",
+      template: "src/index.hbs",
+      meta: {
+        description: "Some Descriptions",
+      },
+    }),
   ],
 };
